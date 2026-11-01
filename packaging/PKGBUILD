@@ -1,0 +1,28 @@
+# Maintainer: velvetwhyme
+pkgname=desktop-shortcut-cli
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="CLI-утилита для создания .desktop-ярлыков"
+url="https://github.com/velvetwhyme/desktop-shortcut-cli"
+arch=('x86_64' 'aarch64')
+license=('MIT')
+makedepends=('rust')
+source=("$pkgname-$pkgver.tar.gz")
+sha256sums=('3507985d92cd2060ee89a69ea9cbeab0ec62ba03c176aa9c0eb522f603ffefa4')
+
+build() {
+  cd "$pkgname-$pkgver"
+  cargo build --release --locked --offline
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  cargo test --release --locked --offline
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm755 target/release/desklink "$pkgdir/usr/bin/desklink"
+  install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+  install -Dm644 LICENSE "$pkgdir/usr/share/doc/$pkgname/LICENSE"
+}

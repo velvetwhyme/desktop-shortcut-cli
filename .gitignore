@@ -1,0 +1,19 @@
+# Rust build output
+/target/
+
+# Arch Linux build output
+/packaging/src/
+/packaging/pkg/
+/packaging/*.tar.gz
+/packaging/*.pkg.tar.zst
+/packaging/*.pkg.tar.zst.sig
+
+# Preserved legacy label-cli artifacts (local history, not published)
+/packaging/legacy-label-cli/
+
+# Local logs and editor/OS files
+*.log
+*.tmp
+.DS_Store
+.idea/
+.vscode/

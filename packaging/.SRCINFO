@@ -1,0 +1,13 @@
+pkgbase = desktop-shortcut-cli
+	pkgdesc = CLI-утилита для создания .desktop-ярлыков
+	pkgver = 0.1.0
+	pkgrel = 1
+	url = https://github.com/velvetwhyme/desktop-shortcut-cli
+	arch = x86_64
+	arch = aarch64
+	license = MIT
+	makedepends = rust
+	source = desktop-shortcut-cli-0.1.0.tar.gz
+	sha256sums = 3507985d92cd2060ee89a69ea9cbeab0ec62ba03c176aa9c0eb522f603ffefa4
+
+pkgname = desktop-shortcut-cli

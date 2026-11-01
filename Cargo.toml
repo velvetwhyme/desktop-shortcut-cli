@@ -1,0 +1,24 @@
+[package]
+name = "desktop-shortcut-cli"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+authors = ["velvetwhyme"]
+description = "CLI-утилита для создания .desktop-ярлыков"
+license = "MIT"
+repository = "https://github.com/velvetwhyme/desktop-shortcut-cli"
+homepage = "https://github.com/velvetwhyme/desktop-shortcut-cli"
+readme = "README.md"
+keywords = ["desktop", "shortcut", "cli"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+
+[[bin]]
+name = "desklink"
+path = "src/main.rs"
+
+[profile.release]
+lto = "thin"
+strip = true
+codegen-units = 1
